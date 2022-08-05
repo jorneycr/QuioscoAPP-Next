@@ -2,6 +2,8 @@
 
 # dependencies
 /node_modules
+/db
+/db/init.sql
 /.pnp
 .pnp.js
 
