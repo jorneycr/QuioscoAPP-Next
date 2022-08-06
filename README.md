@@ -4,6 +4,10 @@
 
 # `npm run dev`
 
-### Prisma Migration
+### Prisma create Migration
 
 # `npx prisma migrate dev`
+
+### Prisma reset DB
+
+# `npx prisma migrate reset`
