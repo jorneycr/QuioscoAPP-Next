@@ -11,3 +11,7 @@
 ### Prisma reset DB
 
 # `npx prisma migrate reset`
+
+### Seed DB
+
+# `npx prisma db seed`
