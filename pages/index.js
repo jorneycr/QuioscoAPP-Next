@@ -1,4 +1,3 @@
-import Head from "next/head";
 import Layout from "../layout/Layout";
 
 export default function Home() {
@@ -6,7 +5,5 @@ export default function Home() {
     <Layout>
       <h1>Inicio</h1>
     </Layout>
-  )
+  );
 }
-
-
