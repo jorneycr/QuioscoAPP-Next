@@ -5,4 +5,4 @@ const useQuiosco = () => {
     return useContext(QuioscoContext);
 }
 
-export default useQuiosco
+export default useQuiosco;
