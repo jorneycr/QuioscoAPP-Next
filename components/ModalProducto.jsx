@@ -5,7 +5,7 @@ import { useState } from "react";
 
 const ModalProducto = () => {
 
-    const { producto, handleChangeModal } = useQuiosco();
+    const { producto, handleChangeModal, handleAgregarPedido } = useQuiosco();
     const [cantidad, setCantidad] = useState(1);
 
     return (
@@ -94,9 +94,9 @@ const ModalProducto = () => {
                 <button
                     type="button"
                     className="bg-indigo-600 hover:bg-indigo-800 px-5 py-2 mt-5 text-white font-bold uppercase rounded"
-                //   onClick={() => handleAgregarPedido({ ...producto, cantidad })}
+                  onClick={() => handleAgregarPedido({ ...producto, cantidad })}
                 >
-                    {/* {edicion ? "Guardar Cambios" : "Añadir al Pedido"} */}
+                    {/* {edicion ? "Guardar Cambios" : "Añadir al Pedido"} */ "Añadir al Pedido"}
                 </button>
             </div>
         </div>
