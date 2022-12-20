@@ -9,10 +9,16 @@ const pasos = [
 
 const Pasos = () => {
 
-    const { handleChangePaso, paso } = useQuiosco();
+    const { handleChangePaso } = useQuiosco();
 
     const calcularProgreso = () => {
-        return (paso / 3) * 100;
+        let valor = 100;
+        if (router.pathname === "/") {
+            valor = 5;
+        } else if (router.pathname === '/resumen') {
+            valor = 50;
+        }
+        return valor
     }
 
     const router = useRouter();
