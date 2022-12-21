@@ -1,6 +1,7 @@
 import { useState, useEffect, createContext } from 'react';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import { useRouter } from "next/router";
 
 const QuioscoContext = createContext();
 
@@ -10,6 +11,7 @@ const QuioscoProvider = ({ children }) => {
     const [producto, setProducto] = useState({});
     const [modal, setModal] = useState(false);
     const [pedido, setPedido] = useState([]);
+    const router = useRouter();        
 
     const obtenerCategorias = async () => {
         const { data } = await axios('/api/categorias');
@@ -19,6 +21,7 @@ const QuioscoProvider = ({ children }) => {
     const handleClickCategoria = id => {
         const categoria = categorias.filter(cat => cat.id === id);
         setCategoriaActual(categoria[0])
+        router.push('/');
     }
 
     const handleSetProducto = producto => {
@@ -36,7 +39,9 @@ const QuioscoProvider = ({ children }) => {
     }
 
     const handleEliminarProducto = id => {
-
+        const pedidoActualizar = pedido.filter(producto => producto.id !== id);
+        setPedido(pedidoActualizar)
+        toast.success('Producto Eliminado');
     }
 
     const handleAgregarPedido = ({ categoriaId, ...producto }) => {
@@ -44,7 +49,6 @@ const QuioscoProvider = ({ children }) => {
             const pedidoActualizado = pedido.map(productoState => productoState.id === producto.id ? producto : productoState);
             setPedido(pedidoActualizado);
             toast.success('Guardado Correctamenta');
-
         } else {
             setPedido([...pedido, producto]);
             toast.success('Agregado al Pedido');

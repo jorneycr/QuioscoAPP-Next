@@ -23,7 +23,7 @@ const ResumenProducto = ({ producto }) => {
             </div>
             <div className="md:w-1/6">
                 <button
-                    className="bg-sky-700 flex gap-2 px-5 py-2 text-white text-center rounded-md font-bold uppercase shadow-md w-full"
+                    className="bg-sky-700 flex gap-2 px-2 py-2 w-50 text-white text-center rounded-md font-bold uppercase shadow-md w-full"
                     onClick={() => handleEditarCantidades(producto.id)}
                 >
                     <svg
@@ -37,7 +37,7 @@ const ResumenProducto = ({ producto }) => {
                     Editar
                 </button>
                 <button
-                    className="bg-red-700 flex gap-2 px-5 py-2 mt-3 text-white text-center rounded-md font-bold uppercase shadow-md w-full"
+                    className="bg-red-700 flex gap-2 px-2 py-2 mt-3 w-50 text-white text-center rounded-md font-bold uppercase shadow-md w-full"
                     onClick={() => handleEliminarProducto(producto.id)}
                 >
                     <svg
