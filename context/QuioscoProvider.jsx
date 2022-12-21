@@ -29,6 +29,16 @@ const QuioscoProvider = ({ children }) => {
         setModal(!modal);
     }
 
+    const handleEditarCantidades = id => {
+        const productoActualizar = pedido.filter(producto => producto.id === id);
+        setProducto(productoActualizar[0])
+        setModal(!modal);
+    }
+
+    const handleEliminarProducto = id => {
+
+    }
+
     const handleAgregarPedido = ({ categoriaId, ...producto }) => {
         if (pedido.some(productoState => productoState.id === producto.id)) {
             const pedidoActualizado = pedido.map(productoState => productoState.id === producto.id ? producto : productoState);
@@ -61,7 +71,9 @@ const QuioscoProvider = ({ children }) => {
                 modal,
                 handleChangeModal,
                 handleAgregarPedido,
-                pedido
+                pedido,
+                handleEditarCantidades,
+                handleEliminarProducto
             }}
         >
             {children}
