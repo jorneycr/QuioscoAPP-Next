@@ -3,6 +3,8 @@
 
 ### Run the project on develop
 
+# `https://quioscoapp-next-production.up.railway.app/`
+
 # `npm run dev`
 
 ### Prisma create Migration
