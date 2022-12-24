@@ -7,8 +7,6 @@ export default function admin() {
   const fetcher = () => axios("/api/ordenes").then((datos) => datos.data);
   const { data, error, isLoading } = useSWR("/api/ordenes", fetcher);
 
-  console.log(data);
-
   return (
     <AdminLayout pagina={"Admin"}>
       <h1 className="text-4xl font-black ">Panel de Administracin</h1>
